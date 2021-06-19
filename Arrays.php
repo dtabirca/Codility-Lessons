@@ -6,7 +6,7 @@ declare(strict_types=1);
  * 1. CyclicRotation
  * Rotate an array to the right by a given number of steps.
  */
-function solution(array $A, int $K): array
+function solution1(array $A, int $K): array
 {
     while ($K > 0 && !empty($A)) {
         array_unshift($A, array_pop($A));
@@ -19,13 +19,13 @@ $testA = [
     3, 8, 9, 7, 6
 ];
 $testK = 3;
-print_r(solution($testA, $testK));
+print_r(solution1($testA, $testK));
 
 /**
  * 2. OddOccurrencesInArray
  * Find value that occurs in odd number of elements.
  */
-function solution(array $A): int
+function solution2(array $A): int
 {
     $odd = [];
     foreach ($A as $elm) {
@@ -41,4 +41,4 @@ function solution(array $A): int
 $test = [
     9, 3, 9, 3, 9, 7, 9
 ];
-echo solution($test);
+echo solution2($test);
